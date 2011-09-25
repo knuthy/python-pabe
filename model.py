@@ -22,6 +22,10 @@ class Model:
         self._load_db()
 
     def _load_db(self):
+        """
+        Loads the articles into a single dictionary "db"
+        such as db['my_id'] contains the data of the article with "my_id" as name
+        """
         master = self.repo.heads.master
         self.chex = master.commit.hexsha
 
@@ -49,11 +53,6 @@ class Model:
                 md = md.replace(code, pret)
 
             html = markdown.markdown(md)
-            title = ""
-            author = ""
-            date = ""
-            tags = []
-            categories = []
 
             try:
                 title = parts[0].split(':')[1].strip()
@@ -75,6 +74,10 @@ class Model:
             }
 
     def _reload_db(self):
+        """
+        when the sha codes are different it means that there were a update
+        of the repository, we should then re-load the posts
+        """
         master = self.repo.heads.master
         if master.commit.hexsha != self.chex:
             self.db = {}
