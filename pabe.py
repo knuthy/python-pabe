@@ -1,7 +1,6 @@
 """ Basic blog using webpy 0.3 """
 import web
 import model
-
 __author__ = 'knuthy'
 
 
@@ -20,13 +19,14 @@ t_globals = {
 }
 
 render = web.template.render('templates', base='base', globals=t_globals)
+mod = model.Model()
 
 
 class Index:
 
     def GET(self):
         """ Show page """
-        posts = model.get_posts()
+        posts = mod.get_posts()
         return render.index(posts)
 
 class Article:
@@ -34,7 +34,7 @@ class Article:
     def GET(self, id):
         """ Show an article
         """
-        post = model.get_post(id)
+        post = mod.get_post(id)
         return render.article(post)
 
 class Search:
@@ -44,7 +44,7 @@ class Search:
         # replace + by spaces
         terms = terms.replace('+', ' ')
         print terms
-        posts = model.search(terms)
+        posts = mod.search(terms)
         return render.index(posts)
 
 app = web.application(urls, globals())
