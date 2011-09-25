@@ -1,10 +1,14 @@
 PABE = Probably An Other Blog Engine (in python)
 
 You need:
-* markdown (`easy_install markdown`)
-* gitpython (`easy_install gitpython`)
-* pygments (`easy_install pygments`)
-* web.py (`easy_install web.py`)
+
+* markdown
+* gitpython
+* pygments
+* web.py
+
+
+    sudo easy_install markdown gitpython pygments web.py
 
 To run the blog just do:
 
