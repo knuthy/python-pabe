@@ -1,0 +1,18 @@
+$def with (post)
+
+<article>
+    <header>
+        <div class="title">$post['title']</div>
+        <div class="info"><strong>by </strong>
+            <span class="data">$post['author']</span>
+            <strong>on </strong>
+            <span class="data">$post['date']</span>
+        </div>
+        <div class="clear"></div>
+    </header>
+    <section class="content">
+        $:post['html']
+    </section>
+</article>
+<div class="inter_article"></div>
+

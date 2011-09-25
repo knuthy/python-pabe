@@ -1,0 +1,21 @@
+$def with (posts)
+
+$for post in posts:
+    <article>
+        <header>
+            <div class="title">
+                <a href="/article/$post['id']">$post['title']</a>
+            </div>
+            <div class="info"><strong>by </strong>
+                <span class="data">$post['author']</span>
+                <strong>on </strong>
+                <span class="data">$post['date']</span>
+            </div>
+            <div class="clear"></div>
+        </header>
+        <section class="content">
+            $:post['html']
+        </section>
+    </article>
+    <div class="inter_article"></div>
+

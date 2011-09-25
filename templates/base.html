@@ -1,0 +1,39 @@
+$def with (page)
+<!DOCTYPE html>
+<html lang="fr">
+<head><title>GlouGlou</title>
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lato&amp;v2">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Varela+Round&amp;v2">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/static/css/emacs.css">
+</head>
+<body>
+<div id="header">
+    <div id="top_bar">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="#">Categories</a>
+                <ul>
+                    <li><a href="#">Cat One</a></li>
+                    <li><a href="#">Cat two</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Archives</a></li>
+        </ul>
+        <form name="search" action="/search/" method="get" class="top_search">
+            <input type="text" name="q"
+               autocomplete="off"
+               placeholder="Search"
+               class="top_input"/>
+        </form>
+    </div>
+    <div id="top_title"><h1><a href="/">PABE</a></h1>
+
+        <h2>Python YABE, Yet An Other Blog Engine</h2></div>
+</div>
+<div class="clear"></div>
+<div id="container">
+    $:page
+</div>
+</body>
+</html>
