@@ -7,8 +7,11 @@ You need:
 * pygments
 * web.py
 
+To install them just run:
+
 
     sudo easy_install markdown gitpython pygments web.py
+
 
 To run the blog just do:
 
